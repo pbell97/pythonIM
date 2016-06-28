@@ -20,19 +20,19 @@ else:
 	waitTime = 5
 
 s.bind((serverHost, serverPort))   		
-s.listen(5)							#Listens for connection
+s.listen(5)						#Listens for connection
 print "Please wait..."
 time.sleep(waitTime)					#Waits for other connection to be open
-c.connect((clientHost, clientPort))		#Connects to other client
-oc, addr = s.accept()			#Accepts connection
+c.connect((clientHost, clientPort))			#Connects to other client
+oc, addr = s.accept()					#Accepts connection
 	
 
 while True:
 	if userNum == 1:
 		oc.send((raw_input("User 1: ") + " "), userNum)		#Sends Message
-		print "User 2:" , c.recv(1024)									#Receives Message
+		print "User 2:" , c.recv(1024)				#Receives Message
 	else:
-		print "User 1:" , c.recv(1024)									#Receives Message
+		print "User 1:" , c.recv(1024)				#Receives Message
 		oc.send((raw_input("User 2: ") + " "), userNum)		#Sends Message
  
  
