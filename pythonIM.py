@@ -87,5 +87,7 @@ Currently only allows one message to be send
 Deletes last character of one sided message
 
 Changes:
--
+-Creating a full GUI experience
+
+Problem: Getting all the steps to run in order for a solid connection. Need to figure out how to start a while loop
 """
