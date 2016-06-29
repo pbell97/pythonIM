@@ -3,8 +3,27 @@ import Tkinter
 import time
 s = socket.socket()
 c = socket.socket()
+userNum = 0
 
-userNum = input("Are you user 1 or 2: ")
+def assignUser1():
+	global userNum
+	userNum = 1
+	print userNum
+	selector.destroy()
+def assignUser2():
+	global userNum
+	userNum = 2
+	print userNum
+	selector.destroy()
+	
+
+selector = Tkinter.Tk()
+label1 = Tkinter.Label(text = "Select Which User You Are"); label1.pack(padx=5, pady=10, side="left")
+button1 = Tkinter.Button(text = "User 1", command = assignUser1); button1.pack(padx=5, pady=10, side="left")
+button2 = Tkinter.Button(text = "User 2", command = assignUser2); button2.pack(padx=5, pady=10, side="left")
+selector.mainloop()
+
+#userNum = input("Are you user 1 or 2: ")
 messages = ['']
 
 
@@ -22,19 +41,7 @@ else:
 	clientPort = 12345
 	waitTime = 5
 
-screen = Tkinter.Tk()
-printuserNum = Tkinter.Label(text = ("User Number:" , userNum)); printuserNum.pack()
-printIP = Tkinter.Label(text = ("IP address:", serverHost)); printIP.pack()
-label1 = Tkinter.Label(text = messages[0]); label1.pack()
-label2 = Tkinter.Label(text = messages[0]); label2.pack()
-label3 = Tkinter.Label(text = messages[0]); label3.pack()
-label4 = Tkinter.Label(text = messages[0]); label4.pack()
-label5 = Tkinter.Label(text = messages[0]); label5.pack()
-label6 = Tkinter.Label(text = messages[0]); label6.pack()
-label7 = Tkinter.Label(text = messages[0]); label7.pack()
-label8 = Tkinter.Label(text = messages[0]); label8.pack()
-label9 = Tkinter.Label(text = messages[0]); label9.pack()
-screen.mainloop()
+
 	
 	
 	
@@ -70,5 +77,5 @@ Currently only allows one message to be send
 Deletes last character of one sided message
 
 Changes:
--
+- User Selector Created
 """
